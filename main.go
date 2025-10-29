@@ -91,10 +91,8 @@ func main() {
 
 	// Ruta 'Seguridad' registro y login, elementos protegidos
 	seguridadGroup := e.Group(prefijo + "seguridad")
-	{
-		seguridadGroup.POST("/registro", rutas.RegistroUsuario(mongoClient, dbName, cols["usuarios"]))
-		seguridadGroup.POST("/login", rutas.LoginUsuario(mongoClient, dbName, cols["usuarios"]))
-	}
+	seguridadGroup.POST("/registro", rutas.RegistroUsuario(mongoClient, dbName, cols["usuarios"]))
+	seguridadGroup.POST("/login", rutas.LoginUsuario(mongoClient, dbName, cols["usuarios"]))
 
 	// CORS
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
