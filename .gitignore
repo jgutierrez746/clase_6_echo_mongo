@@ -1,0 +1,9 @@
+# Ignorar archivos sensibles o temporales
+.env
+*.log
+*.tmp
+config_local.json
+
+# Ignorar Carpetas
+logs/
+temp/
